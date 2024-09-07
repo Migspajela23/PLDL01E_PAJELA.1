@@ -35,7 +35,7 @@ elif 80 <= final_grade <= 82:
     remark = 2.50
 elif 77 <= final_grade <= 79:
     remark = 2.25
-elif 86 <= final_grade <= 88:
+elif 74 <= final_grade <= 76:
     remark = 2.00
 elif 74 <= final_grade <= 76:
     remark =  1.75
