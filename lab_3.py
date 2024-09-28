@@ -25,7 +25,7 @@ employee_name = str(input("Employee name: "))
 employee_code = int(input("Employee code: "))
 department = str(input("Enter department: "))
 rate_per_hour = float(input("Rate per hour: "))
-no_of_hours_per_day = float(input("Number of hours per day: "))
+no_of_hours_per_day = float(input("Number of hours per payday: "))
 hours_overtime = float(input("Number of hours overtime per day :"))
 hours_absence = float(input("Number of hours absent per payday: "))
 hours_tardy = float(input("Number of hours for tardy: "))
@@ -121,4 +121,44 @@ elif gross_earning == 10000:
 else:
     philhealth_contribution = 0
 
-#determine withholding tax
+#Determining Withholding Tax
+if gross_earning < 10417:
+    withholding_tax = 0.00
+elif 10417 <= gross_earning <= 16666:
+    withholding_tax = (0.00 + 0.05) / 10417
+elif 16667 <= gross_earning <= 33332:
+    withholding_tax = (937.50 + 0.2) / 16667
+elif 33333 <= gross_earning <= 83332:
+    withholding_tax = (4270.20 + 0.25) / 33333
+elif 83333 <= gross_earning <= 333332:
+    withholding_tax = (16770.70 + 0.3) / 83333
+else:
+    withholding_tax = (91770.70 + 0.35) / 333333
+
+#Calculate Deductions
+deduction = absences + tardiness + withholding_tax + sss_contribution + philhealth_contribution + HDMF_contribution
+
+#Calculate Net Pay
+net_pay = gross_earning - deduction
+
+#Display
+
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+print("Company Name: ", company_name)
+print("Employee Name: ", employee_name)
+print("Employee Code: ", employee_code)
+print("Cut-off: ", date_cutoff)
+print("Pay period: ", date_cutoff)
+print("Basic Pay: ", basic_pay)
+print("Overtime Pay: ", overtime)
+print("Absences: ", absences)
+print("Honorarium: ", honorarium)
+print("Tardy: ", tardiness)
+print("Withholding Tax: ", withholding_tax)
+print("SSS Contribution: ", sss_contribution)
+print("PhilHealth Contribution: ", philhealth_contribution)
+print("HDMF Contribution: ", HDMF_contribution)
+print("Deductions: ", deduction)
+print("Gross Earnings: ", gross_earning)
+print("Net Pay: ", net_pay)
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
