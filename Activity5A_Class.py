@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from Activity5A_Class import StudentData, CourseInfo, AssessmentFees
 
 
@@ -71,3 +72,8 @@ def main():
 
 
 
+=======
+import Activity5_Class
+
+obj = Activity5_Class.Student_Info
+>>>>>>> 6aa1c72395b1d66a144782ec7d910d57aef59add

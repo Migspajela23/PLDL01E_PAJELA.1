@@ -1,6 +1,6 @@
 class Employee:
     hdmf = 100.00
-    # initialization or constructor method of our class
+    # initialization
     def __init__(self):
         # input for employee's information
         self.hdmf_contribution = 100.00
@@ -10,7 +10,7 @@ class Employee:
         self.employee_code = input("Enter Employee Code: ")
         self.salary_cut_off = input("Enter Cut-Off Date: ")
 
-        # input for salary computation
+        # input salary computation
         self.emp_rate_per_hour = float(input("Employee rate per hour: "))
         self.emp_num_of_hours_per_payday = int(input("Employee's number of hours worked per payday: "))
         self.emp_hours_overtime = float(input("Employee overtime hours: "))
@@ -26,7 +26,7 @@ class Employee:
         self.emp_absences = self.emp_num_of_absences * self.emp_rate_per_hour
         self.emp_tardiness = self.emp_num_tardiness * self.emp_rate_per_hour
 
-    # method for determining SSS contribution
+    # Detemine sss contribution
     def emp_sss_contribution(self):
         sss_table = [
             (0, 0, 180.00), (4250, 4749.99, 202.50), (4750, 5249.99, 225.00), (5250, 5749.99, 247.50),
@@ -45,7 +45,7 @@ class Employee:
                 break
 
     def emp_philhealth_contribution(self):
-        # method for determining Philhealth contribution
+        #  Determine Philhealth contribution
         if self.emp_gross_earnings < 10000:
             self.philhealth_contribution = 0.00
         else:
@@ -67,7 +67,7 @@ class Employee:
                           self.philhealth_contribution + self.hdmf_contribution)
 
     def emp_employee_netpay(self):
-        # method for the net pay of the employee
+        # Netpay and employee
         self.net_pay = self.emp_gross_earnings - self.deduction
 
     def emp_displayEmployee(self):
@@ -88,7 +88,7 @@ class Employee:
         print("Total Deduction: %.2f\n" % self.deduction)
         print("Net Income: %.2f" % self.net_pay)
 
-# creating an object of the class Employee
+# Class of employee
 emp1 = Employee()
 emp1.emp_salary_computation()
 emp1.emp_sss_contribution()
